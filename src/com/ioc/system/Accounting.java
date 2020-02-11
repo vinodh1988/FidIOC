@@ -1,8 +1,12 @@
 package com.ioc.system;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-@Component
+@Qualifier("tasks")
+@Component("accounting")
+@Order(1)
 public class Accounting implements Process {
 
 	@Override

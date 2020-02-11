@@ -1,9 +1,15 @@
 package com.ioc.system;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class XYZCompany implements Company{
 
 	private BusinessOperation branch;
 	
+	@Autowired
+	private Process accounting;
+	@Autowired
+	private Process production;
 	
 	public XYZCompany(BusinessOperation branch) {
 		super();
@@ -17,6 +23,8 @@ public class XYZCompany implements Company{
 		// TODO Auto-generated method stub
 		System.out.println("Registed and Started "+name+" Company");
 		branch.perform("Bengaluru");
+		accounting.process("Second Quarter");
+		production.process("Nuts and bolts");
 	}
 
 }
