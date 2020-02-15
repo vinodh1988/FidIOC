@@ -90,8 +90,8 @@ ApplicationContext ac=new ClassPathXmlApplicationContext("beans.xml");
 
 Dependency Injection in XML Configuration can be implemented in two ways
 
-1.Constructor Injection
-2.Setter Injection
+1. Constructor Injection
+1. Setter Injection
 
 Constructor Injection is implemented in the following way
 
