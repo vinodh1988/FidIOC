@@ -184,3 +184,13 @@ public void setManufacturing(BusinessOperation manufacturing) {
 Spring Bean Scopes allows us to have more granular control of the bean instances creation. Sometimes we want to create bean instance as singleton but in some other cases we might want it to be created on every request or once in a session.
 
 ![Bean Scopes](https://funny-bucket.s3.ap-south-1.amazonaws.com/bean-scopes.gif)
+
+#### Annotation and XML Configuration
+
+In Spring framework, declaring bean dependencies in configuration files is a good practice to follow, so the Spring container is able to autowire relationships between collaborating beans. This means that it is possible to automatically let Spring resolve collaborators (other beans) for your beans by inspecting the contents of the BeanFactory. This is called spring bean autowiring.
+
+##### Autowiring Modes
+
+   Autowiring happens in following ways
+
+![Autowiring Modes](https://funny-bucket.s3.ap-south-1.amazonaws.com/Capture.PNG)
