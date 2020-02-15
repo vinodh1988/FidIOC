@@ -44,12 +44,8 @@ The ApplicationContext container includes all functionality of the BeanFactory c
 The most commonly used ApplicationContext implementations are:
 
 * #### FileSystemXmlApplicationContext 
-                This container loads the definitions of the beans from an XML file.
-                Here you need to provide the full path of the XML bean configuration file to the constructor.
+ This container loads the definitions of the beans from an XML file.Here you need to provide the full path of the XML bean configuration file to the constructor.
 * #### ClassPathXmlApplicationContext 
-            This container loads the definitions of the beans from an XML file. 
-            Here you do not need to provide the full path of the XML file but you need to set
-             CLASSPATH properly because this container will look bean configuration XML file in CLASSPATH.
+This container loads the definitions of the beans from an XML file. Here you do not need to provide the full path of the XML file but you need to set CLASSPATH properly because this container will look bean configuration XML file in CLASSPATH.
 * #### WebXmlApplicationContext 
-              This container loads the XML file with definitions of all beans from within 
-              a web application.
+This container loads the XML file with definitions of all beans from within a web application.
