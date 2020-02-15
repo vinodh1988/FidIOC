@@ -3,6 +3,7 @@
 ## Topics
 
 * [IOC Containers](#IOC-Containers)
+* [IOC Implementation](#Implementing-dependency-injection)
  
 ### Inversion of Control
 
@@ -49,3 +50,11 @@ The most commonly used ApplicationContext implementations are:
 This container loads the definitions of the beans from an XML file. Here you do not need to provide the full path of the XML file but you need to set CLASSPATH properly because this container will look bean configuration XML file in CLASSPATH.
 * #### WebXmlApplicationContext 
 This container loads the XML file with definitions of all beans from within a web application.
+
+## Implementing Dependency Injection
+
+    Using Spring Framework, Dependency Injection can be implemented in following ways
+    
+    * XML Configuration
+    * XML and Annotation Configuration
+    * Java and Annotation Configuration
