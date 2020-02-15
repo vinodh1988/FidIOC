@@ -40,12 +40,12 @@ ApplicationContext container adds more enterprise-specific functionality such as
 
 The ApplicationContext container includes all functionality of the BeanFactory container, so it is generally recommended over the BeanFactory. BeanFactory can still be used for lightweight applications like mobile devices or applet based applications where data volume and speed is significant.
 
-### 1. Types of ApplicationContext
+         1. Types of ApplicationContext
 The most commonly used ApplicationContext implementations are:
 
-#### 1.FileSystemXmlApplicationContext 
+             1.FileSystemXmlApplicationContext 
                 This container loads the definitions of the beans from an XML file. Here you need to provide the full path of the XML bean configuration file to the constructor.
-####  1.ClassPathXmlApplicationContext 
+             1.ClassPathXmlApplicationContext 
             This container loads the definitions of the beans from an XML file. Here you do not need to provide the full path of the XML file but you need to set CLASSPATH properly because this container will look bean configuration XML file in CLASSPATH.
- ####  1.WebXmlApplicationContext 
+             1.WebXmlApplicationContext 
               This container loads the XML file with definitions of all beans from within a web application.
