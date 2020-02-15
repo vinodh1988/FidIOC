@@ -78,7 +78,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
  ```
 
- Creating Application Context, By using the xml file we can create Application Context using **ClasspathXMLApplicationContext**
+ Creating Application Context, By using the xml file we can create Application Context using _ClasspathXMLApplicationContext_
 
 and we can get the object by using getBean Method
 
@@ -87,3 +87,37 @@ ApplicationContext ac=new ClassPathXmlApplicationContext("beans.xml");
 	    Company company=(Company) ac.getBean("abc");
 
 ```
+
+Dependency Injection in XML Configuration can be implemented in two ways
+
+1.Constructor Injection
+2.Setter Injection
+
+Constructor Injection is implemented in the following way
+
+```
+public class XYZCompany implements Company{
+
+	private BusinessOperation branch;
+
+    	
+	public XYZCompany(BusinessOperation branch) {
+		super();
+		System.out.println("Constructor called");
+		this.branch = branch;
+	}
+
+    ---
+    ---
+    ---
+}
+```
+
+  And in the xml Configuration file, configure the constructor parameter as follows
+
+  ```
+  <bean id="xyz" class="com.ioc.system.XYZCompany">
+     <constructor-arg name="branch" ref="b"></constructor-arg>
+</bean>
+```
+
