@@ -23,7 +23,7 @@ Spring provides following two types of containers.
 
     ## 1. Bean Factory
 
-    The BeanFactory is the actual container which instantiates, configures, and manages a number of beans. These beans typically collaborate with one another, and thus have dependencies between themselves. These dependencies are reflected in the configuration data used by the BeanFactory (although some dependencies may not be visible as configuration data, but rather be a function of programmatic interactions between beans at runtime).
+ The BeanFactory is the actual container which instantiates, configures, and manages a number of beans. These beans typically collaborate with one another, and thus have dependencies between themselves. These dependencies are reflected in the configuration data used by the BeanFactory (although some dependencies may not be visible as configuration data, but rather be a function of programmatic interactions between beans at runtime).
 
 A BeanFactory is represented by the interface org.springframework.beans.factory.BeanFactory, for which there are multiple implementations. The most commonly used simple BeanFactory implementation is org.springframework.beans.factory.xml.XmlBeanFactory. (This should be qualified with the reminder that ApplicationContexts are a subclass of BeanFactory, and most users end up using XML variants of ApplicationContext).
 
@@ -33,3 +33,19 @@ Although for most scenarios, almost all user code managed by the BeanFactory doe
 Resource res = new FileSystemResource("beans.xml");
 XmlBeanFactory factory = new XmlBeanFactory(res);
 ```
+
+  ##  1. ApplicationContext
+
+ApplicationContext container adds more enterprise-specific functionality such as the ability to resolve textual messages from a properties file and the ability to publish application events to interested event listeners. This container is defined by the org.springframework.context.ApplicationContext interface.
+
+The ApplicationContext container includes all functionality of the BeanFactory container, so it is generally recommended over the BeanFactory. BeanFactory can still be used for lightweight applications like mobile devices or applet based applications where data volume and speed is significant.
+
+      ###  1. Types of ApplicationContext
+The most commonly used ApplicationContext implementations are:
+
+          ####  1.FileSystemXmlApplicationContext 
+                This container loads the definitions of the beans from an XML file. Here you need to provide the full path of the XML bean configuration file to the constructor.
+          ####  1.ClassPathXmlApplicationContext 
+            This container loads the definitions of the beans from an XML file. Here you do not need to provide the full path of the XML file but you need to set CLASSPATH properly because this container will look bean configuration XML file in CLASSPATH.
+          ####  1.WebXmlApplicationContext 
+              This container loads the XML file with definitions of all beans from within a web application.
