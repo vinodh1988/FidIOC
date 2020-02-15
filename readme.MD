@@ -58,3 +58,25 @@ Using Spring Framework, Dependency Injection can be implemented in following way
 * XML Configuration
 * XML and Annotation Configuration
 * Java and Annotation Configuration
+
+### XML Configuration
+
+ In XML Configuration we need to create a bean configuration xml file as follows
+
+ ```
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-cache-4.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+
+
+<bean id="abc" class="com.ioc.system.ABCCompany" ></bean>
+
+<bean id="xyz" class="com.ioc.system.XYZCompany" ></bean>
+
+</beans>
+
+
+
+ ```
