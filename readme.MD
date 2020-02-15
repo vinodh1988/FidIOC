@@ -177,3 +177,9 @@ public void setManufacturing(BusinessOperation manufacturing) {
 #### Differences between constructor vs Setter injection
 
 ![Constructor vs Setter Inject](https://funny-bucket.s3.ap-south-1.amazonaws.com/constructor.jpg)
+
+#### Spring Bean Scopes
+
+Spring Bean Scopes allows us to have more granular control of the bean instances creation. Sometimes we want to create bean instance as singleton but in some other cases we might want it to be created on every request or once in a session.
+
+![Bean Scopes](https://funny-bucket.s3.ap-south-1.amazonaws.com/bean-scopes.gif)
