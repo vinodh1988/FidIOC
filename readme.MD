@@ -77,3 +77,13 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 </beans>
 
  ```
+
+ Creating Application Context, By using the xml file we can create Application Context using **ClasspathXMLApplicationContext**
+
+and we can get the object by using getBean Method
+
+```
+ApplicationContext ac=new ClassPathXmlApplicationContext("beans.xml");
+	    Company company=(Company) ac.getBean("abc");
+
+```
