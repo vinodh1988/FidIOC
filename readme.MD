@@ -189,8 +189,52 @@ Spring Bean Scopes allows us to have more granular control of the bean instances
 
 In Spring framework, declaring bean dependencies in configuration files is a good practice to follow, so the Spring container is able to autowire relationships between collaborating beans. This means that it is possible to automatically let Spring resolve collaborators (other beans) for your beans by inspecting the contents of the BeanFactory. This is called spring bean autowiring.
 
-##### Autowiring Modes
+#### Autowiring Modes
 
    Autowiring happens in following ways
 
 ![Autowiring Modes](https://funny-bucket.s3.ap-south-1.amazonaws.com/Capture.PNG)
+
+##### Autowiring by Name
+
+  Use Autowired annotation as used in the following class
+
+```
+public class XYZCompany implements Company{
+
+	private BusinessOperation branch;
+	
+	@Autowired
+	private Process accounting;
+	@Autowired
+	private Process production;
+
+    ---
+    ---
+    ---
+}
+```
+
+Create a class with Stereotype as follows
+
+```
+@Component("accounting")
+public class Accounting implements Process {
+
+	@Override
+	public void process(String name) {
+		// TODO Auto-generated method stub
+		System.out.println("Managing Accounts "+name);
+	}
+
+}
+```
+
+Based on the name of the reference variable _account_ , Accounting class get Autowired.
+
+For the Autowiring to work in XML Configuration, Add the following lines in XML file
+
+```
+<context:annotation-config></context:annotation-config>
+<context:component-scan base-package="com.ioc.system"></context:component-scan>
+```
