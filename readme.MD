@@ -53,8 +53,8 @@ This container loads the XML file with definitions of all beans from within a we
 
 ## Implementing Dependency Injection
 
-    Using Spring Framework, Dependency Injection can be implemented in following ways
+Using Spring Framework, Dependency Injection can be implemented in following ways
     
-    * XML Configuration
-    * XML and Annotation Configuration
-    * Java and Annotation Configuration
+* XML Configuration
+* XML and Annotation Configuration
+* Java and Annotation Configuration
