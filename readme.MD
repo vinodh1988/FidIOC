@@ -93,6 +93,8 @@ Dependency Injection in XML Configuration can be implemented in two ways
 1. Constructor Injection
 1. Setter Injection
 
+#### Constructor Injection
+
 Constructor Injection is implemented in the following way
 
 ```
@@ -121,3 +123,52 @@ public class XYZCompany implements Company{
 </bean>
 ```
 
+#### Setter Injection
+
+  In the class, Added getters and Setter for the properties which you want to configure and inject
+
+```
+
+public class ABCCompany implements Company {
+
+private BusinessOperation branch;
+private BusinessOperation manufacturing;
+
+
+public BusinessOperation getBranch() {
+	return branch;
+}
+
+
+
+public void setBranch(BusinessOperation branch) {
+	System.out.println("Branch is set");
+	this.branch = branch;
+}
+
+
+
+public BusinessOperation getManufacturing() {
+	return manufacturing;
+}
+
+
+
+public void setManufacturing(BusinessOperation manufacturing) {
+	this.manufacturing = manufacturing;
+}
+
+---
+---
+---
+---
+}
+
+ Configure the properties in xml configuration as follows
+
+```
+<bean id="abc" class="com.ioc.system.ABCCompany">
+     <property name="branch" ref="b"></property>
+     <property name="manufacturing" ref="m"></property>
+</bean>
+```
