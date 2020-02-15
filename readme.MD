@@ -4,6 +4,7 @@
 
 * [IOC Containers](#IOC-Containers)
 * [IOC Implementation](#Implementing-dependency-injection)
+* [XML Configuration](#XML-Configuration)
  
 ### Inversion of Control
 
