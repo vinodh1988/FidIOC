@@ -9,8 +9,8 @@
 	* [Setter Injection](#Setter-Injection)
 	* [Spring Bean Scopes](#Spring-bean-scopes)
 * [Annotation and XML Configuration](#Annotation-and-XML-Configuration)
-	*[Autowiring Modes](#Autowiring-modes)
-	*[Stereotypes](#Stereotypes)
+	* [Autowiring Modes](#Autowiring-modes)
+	* [Stereotypes](#Stereotypes)
 
 * [Java Configuration](Java-Configuration)
  
