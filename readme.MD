@@ -238,3 +238,10 @@ For the Autowiring to work in XML Configuration, Add the following lines in XML 
 <context:annotation-config></context:annotation-config>
 <context:component-scan base-package="com.ioc.system"></context:component-scan>
 ```
+
+#Stereotypes
+
+  For Autowiring by name or type to happen,We should have stereotyped
+  the classes with any othe following Stereotypes
+
+  ![Stereotypes](https://funny-bucket.s3.ap-south-1.amazonaws.com/stereotype.png)
