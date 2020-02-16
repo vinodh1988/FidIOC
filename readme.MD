@@ -15,6 +15,7 @@
 * [Java Configuration](Java-Configuration)
 * [Spring Bean Life Cycle](#Spring-life-cycle)
 	* [Bean Post Processors](#Bean-post-processors)
+* [Event handling in Spring](#Event-handling-in-Spring)
  
 ### Inversion of Control
 
