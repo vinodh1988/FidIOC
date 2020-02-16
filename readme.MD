@@ -13,6 +13,8 @@
 	* [Stereotypes](#Stereotypes)
 
 * [Java Configuration](Java-Configuration)
+* [Spring Bean Life Cycle][#Spring-life-cycle]
+	* [Bean Post Processors][#Bean-post-processors]
  
 ### Inversion of Control
 
@@ -290,3 +292,103 @@ AbstractApplicationContext ac=new AnnotationConfigApplicationContext(
 Bean Object created in Spring applicatin Context undergoes following phases
 
 ![Bean life cycle](https://funny-bucket.s3.ap-south-1.amazonaws.com/lifecycle.png)
+
+## Bean Life Cycle Hooks
+
+We can Implement Initializing bean to implement logic after properties are set and DisposableBean interface
+can be implemented to run logic upon object destruction
+
+Also we use _@PostConstruct_ and  _@PreDestroy_ annotations to implements the logic after constructor execution
+and before object destruction
+
+  ```
+
+
+import com.ioc.events.MyEventPublisher;
+
+
+public class ERPProject implements Project, InitializingBean,DisposableBean {
+@Autowired
+   MyEventPublisher publish;
+
+	public ERPProject()
+	{
+		System.out.println("ERP Project instantiated");
+		System.out.println(hashCode());
+	}
+	
+	@Override
+	public void details() {
+		// TODO Auto-generated method stub
+       System.out.println("ERP Project Started");
+       publish.publish("ERP PROJECT DATA");
+       
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("After Properties Set");
+	}
+	
+	@PreDestroy
+	    public void doTask() {
+		System.out.println("Destruction Task");
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("Finalization Task");
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		// TODO Auto-generated method stub
+		super.finalize();
+		System.out.println("Object Destroyed");
+	}
+	
+	
+
+}
+
+```
+
+#### Bean Post Processors
+
+Bean Post processors mentioned in the life cycle flow can be implemented as follows
+
+```
+
+
+@Component
+public class CentralProcessor implements BeanPostProcessor {
+
+	@PostConstruct
+	public void init()
+	{
+		System.out.println("Central Procesor instantiated");
+	}
+	
+	@Override
+	public Object postProcessAfterInitialization(Object arg0, String arg1) throws BeansException {
+		// TODO Auto-generated method stub
+		System.out.println("Created instance in Post Init"+arg0.hashCode());
+		System.out.println("Bean Name"+arg1);
+		return arg0;
+	}
+
+	@Override
+	public Object postProcessBeforeInitialization(Object arg0, String arg1) throws BeansException {
+		// TODO Auto-generated method stub
+		System.out.println("Created instance"+arg0.hashCode());
+		System.out.println("Bean Name"+arg1);
+	
+	
+		return arg0; 
+	}
+
+}
+
+```
