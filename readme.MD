@@ -239,9 +239,40 @@ For the Autowiring to work in XML Configuration, Add the following lines in XML 
 <context:component-scan base-package="com.ioc.system"></context:component-scan>
 ```
 
-#Stereotypes
+### Stereotypes
 
   For Autowiring by name or type to happen,We should have stereotyped
   the classes with any othe following Stereotypes
 
   ![Stereotypes](https://funny-bucket.s3.ap-south-1.amazonaws.com/stereotype.png)
+
+## Java Configuration
+
+ To Implement IOC in Java Configuration, We need to create a java Configuration class
+ annotated with @Configuration and Component scan need to be configured
+
+ ```
+ @Configuration
+@ComponentScan(basePackages = {"com.ioc.system2","com.ioc.events"})
+public class JavaConfig {
+
+	  @Bean(name="erp")
+	  public Project getPro() {
+		  return new ERPProject();
+	  }
+	  
+	  @Bean(name="mui")
+	  public Project getPro2() {
+		  return new MobileUI();
+	  }
+}
+```
+
+And the application Context is created in the following way
+
+```
+
+AbstractApplicationContext ac=new AnnotationConfigApplicationContext(
+				JavaConfig.class);
+
+```
