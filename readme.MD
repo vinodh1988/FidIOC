@@ -392,3 +392,9 @@ public class CentralProcessor implements BeanPostProcessor {
 }
 
 ```
+
+### Event Handling in Spring
+
+Custom Events can be handled in spring framework in the following way
+
+![Custom Event Handling](https://funny-bucket.s3.ap-south-1.amazonaws.com/CustomEvent.JPG)
