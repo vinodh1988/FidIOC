@@ -5,12 +5,12 @@
 * [IOC Containers](#IOC-Containers)
 * [IOC Implementation](#Implementing-dependency-injection)
 * [XML Configuration](#XML-Configuration)
-	* [Constructor Injection][#Constructor-Injection]
-	* [Setter Injection][#Setter-Injection]
-	* [Spring Bean Scopes][#Spring-bean-scopes]
+	* [Constructor Injection](#Constructor-Injection)
+	* [Setter Injection](#Setter-Injection)
+	* [Spring Bean Scopes](#Spring-bean-scopes)
 * [Annotation and XML Configuration](#Annotation-and-XML-Configuration)
-	*[Autowiring Modes][#Autowiring-modes]
-	*[Stereotypes][#Stereotypes]
+	*[Autowiring Modes](#Autowiring-modes)
+	*[Stereotypes](#Stereotypes)
 
 * [Java Configuration](Java-Configuration)
  
