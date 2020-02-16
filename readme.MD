@@ -13,8 +13,8 @@
 	* [Stereotypes](#Stereotypes)
 
 * [Java Configuration](Java-Configuration)
-* [Spring Bean Life Cycle][#Spring-life-cycle]
-	* [Bean Post Processors][#Bean-post-processors]
+* [Spring Bean Life Cycle](#Spring-life-cycle)
+	* [Bean Post Processors](#Bean-post-processors)
  
 ### Inversion of Control
 
