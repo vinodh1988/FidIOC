@@ -284,3 +284,9 @@ AbstractApplicationContext ac=new AnnotationConfigApplicationContext(
 				JavaConfig.class);
 
 ```
+
+## Spring Bean Life Cycle
+
+Bean Object created in Spring applicatin Context undergoes following phases
+
+![Bean life cycle](https://funny-bucket.s3.ap-south-1.amazonaws.com/lifecycle.png)
